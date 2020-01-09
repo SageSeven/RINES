@@ -1,0 +1,12 @@
+<resources>
+    <string name="main_to_sign_up">注册</string>
+    <string name="main_to_log_in">登录</string>
+    <string name="app_name">RINE</string>
+    <string name="login_title">登录</string>
+    <string name="login_name">用户名：</string>
+    <string name="login_password">密码：</string>
+    <string name="sign_up_name">用户名：</string>
+    <string name="sign_up_password">密码：</string>
+    <string name="sign_up_title">注册</string>
+    <string name="talk_send">发送</string>
+</resources>
