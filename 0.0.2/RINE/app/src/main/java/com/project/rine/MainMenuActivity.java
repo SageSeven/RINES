@@ -11,7 +11,7 @@ import java.math.BigInteger;
 
 public class MainMenuActivity extends BaseActivity implements AdapterView.OnItemClickListener {
 
-    public String[] friends = {"testUser01","123"};
+    public String[] friends = {"testUser01","123","7","8","9"};
     private MsgDatabaseHelper dbHelper;
 
     @Override
