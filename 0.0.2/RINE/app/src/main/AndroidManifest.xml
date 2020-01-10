@@ -13,6 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".GetMessageService"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity android:name=".TalkActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".SignUpActivity" />
