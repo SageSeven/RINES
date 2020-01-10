@@ -6,6 +6,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/talk_get_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/talk_get_msg"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/talk_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
         <EditText
@@ -19,6 +40,7 @@
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
+            android:textSize="20sp"
             android:text="@string/talk_send"
             />
 

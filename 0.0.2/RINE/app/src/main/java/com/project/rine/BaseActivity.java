@@ -19,11 +19,13 @@ import java.io.OutputStreamWriter;
 import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class BaseActivity extends AppCompatActivity {
 
     final static int JSON_MODE_DIRECT = 1;
+    final static int JSON_MODE_ALL = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -226,10 +228,51 @@ public class BaseActivity extends AppCompatActivity {
                     }
                 }
             }
+            else if (mode == JSON_MODE_ALL) {
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    String text = jsonObject.getString(params);
+                    if (!text.equals("")) {
+                        builder.append(text);
+                    }
+                }
+                return builder.toString();
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         return "";
+    }
+    public ArrayList<String> parseMultiJSONString(String jsonData, int mode, String params) {
+        try {
+            JSONArray jsonArray = new JSONArray(jsonData);
+            ArrayList<String> res = new ArrayList<String>();
+            if (mode == JSON_MODE_DIRECT) {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    String text = jsonObject.getString(params);
+                    if (!text.equals("")) {
+                        res.add(text);
+                        return res;
+                    }
+                }
+            }
+            else if (mode == JSON_MODE_ALL) {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    String text = jsonObject.getString(params);
+                    if (!text.equals("")) {
+                        res.add(text);
+                    }
+                }
+                return res;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ArrayList<>();
     }
 }

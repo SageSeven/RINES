@@ -9,4 +9,5 @@
     <string name="sign_up_password">密码：</string>
     <string name="sign_up_title">注册</string>
     <string name="talk_send">发送</string>
+    <string name="talk_get_msg">获取消息</string>
 </resources>
